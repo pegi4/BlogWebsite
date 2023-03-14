@@ -22,6 +22,31 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/about", (req, res) => {
+  res.render("about", {
+    content: aboutContent
+  });
+});
+
+app.get("/contact-us", (req, res) => {
+  res.render("contact", {
+    content: contactContent
+  });
+});
+
+app.get("/compose", (req, res) => {
+  res.render("compose", {
+    content: contactContent
+  });
+});
+
+app.post("/compose", (req, res) => {
+  const conItem = req.body.contentInput;
+  console.log(conItem);
+});
+
+
+
 //Port listening
 app.listen(3000, function() {
   console.log("Server started on port 3000");
